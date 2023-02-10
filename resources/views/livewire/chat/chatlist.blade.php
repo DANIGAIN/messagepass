@@ -26,7 +26,7 @@
                     </div>
                     <div class="bottom_row">
                         <div class="massage_body text-truncate">
-                               rgfstrezrez utdtyrtrzerezrz ytdtxtrf
+                            {{$conversation}}
                         </div>
                         <div class="unread_count">
                             56
