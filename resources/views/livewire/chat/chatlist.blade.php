@@ -26,7 +26,7 @@
                     </div>
                     <div class="bottom_row">
                         <div class="massage_body text-truncate">
-                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta deserunt quae nisi ex quaerat doloribus aliquid, atque delectus officia, qui sint? Beatae error, ipsam quas excepturi aliquid omnis molestiae sit.
+                               rgfstrezrez utdtyrtrzerezrz ytdtxtrf
                         </div>
                         <div class="unread_count">
                             56

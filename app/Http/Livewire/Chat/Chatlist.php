@@ -15,10 +15,16 @@ class Chatlist extends Component
     public $auth = array();
     public $conversations;
     public $receiverInstance;
-    public $name ;
 
     public function getChatUserInstance(Conversation $conversation ,$request)
     {
+
+        if(Session::has('loginId'))
+        {
+               $auth = User::where('id','=',Session::get('loginId'))->first();
+       
+        }
+
         if($conversation->sender_id == $auth->id)
         {
             $this->receiverInstance  = User::firstwhere('id',$conversation->receiver_id);
