@@ -72,7 +72,7 @@ class CustomAuthController extends Controller
             $data = User::where('id','=',Session::get('loginId'))->first();
             
          }
-         return view('dashboard',compact('data'));
+         return view('livewire/chat/dashboard',compact('data'));
     }
     public function logOut()
     {

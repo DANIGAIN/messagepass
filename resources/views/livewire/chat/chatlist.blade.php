@@ -6,7 +6,7 @@
 
 
         <div class="img_container">
-            <img src="https://picsum.photos/205/300?grayscale" alt="no image">
+            <img src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=" alt="no image">
         </div>
     </div>
 
@@ -15,9 +15,9 @@
         @if(count($conversations)> 0)
             @foreach($conversations as $conversation )
 
-            <div class="chatlist_item">
+            <div class="chatlist_item" wire:click="$emit('chatUserSelect',{{$conversation}},{{$this->getChatUserInstance($conversation, $name='id')}})">
                 <div class="chatlist_img">
-                    <img src="https://picsum.photos/200/300?grayscale" alt="no image ">
+                    <img src="https://ui-avatars.com/api/?name={{$this->getChatUserInstance($conversation, $name='name')}}" alt="no image ">
                 </div>
                 <div class="chatlist_info">
                     <div class="top_row">
@@ -26,7 +26,7 @@
                     </div>
                     <div class="bottom_row">
                         <div class="massage_body text-truncate">
-                            {{$conversation}}
+                            kjl;ho';jkp'lj
                         </div>
                         <div class="unread_count">
                             56

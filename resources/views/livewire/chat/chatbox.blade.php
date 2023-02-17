@@ -1,98 +1,64 @@
 <div>
     {{-- The best athlete wants his opponent at his best. --}}
+
+    @if($selectConversation)
+
+
     <div class="chatbox_header">
-       <div class="return">
-        <i class="bi bi-arrow-left"></i>
-       </div>
-       <div class="img_continer">
-           <img src="https://picsum.photos/200/300?grayscale" alt="no image">
-       </div>
-       <div class="name">
-          dani
-       </div>
-       <div class="info">
-        <div class="info_item">
-            <i class="bi bi-telephone-fill"></i>
+        <div class="return">
+         <i class="bi bi-arrow-left"></i>
         </div>
-        <div class="info_item">
-            <i class="bi bi-image-fill"></i>
+        <div class="img_continer">
+            <img src="https://ui-avatars.com/api/?name={{$receiverInstance->name}}" alt="no image">
         </div>
-        <div class="info_item">
-            <i class="bi bi-info-circle"></i>
+        <div class="name">
+           {{$receiverInstance->name}}
         </div>
-
-       </div>
-
-    </div>
-    <div class="chatbox_body">
-
-
-
-         <div class="msg_body msg_body_receiver">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis temporibus dolorum asperiores corrupti numquam sint aperiam fugiat officia distinctio! Quisquam quibusdam inventore unde eos magni quae dicta distinctio voluptatem nisi?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ab similique velit tenetur accusantium earum sunt eaque exercitationem alias iste voluptatibus, dicta ullam quam quis doloribus nisi, nesciunt, doloremque dolorum?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ipsum dolores, nemo laudantium similique quos mollitia sunt est labore. Minima deleniti excepturi consequatur explicabo fugit sit repellendus provident corporis laboriosam!
-
-
-             <div class="msg_body_footer">
-                <div class="data">
-                    5 hours ago
-
-                </div>
-                <div class="read">
-                    <i class="bi bi-check"></i>
-
-                </div>
-
-             </div>
+        <div class="info">
+         <div class="info_item">
+             <i class="bi bi-telephone-fill"></i>
          </div>
-
-
-
-
-         <div class="msg_body msg_body_me">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis temporibus dolorum asperiores corrupti numquam sint aperiam fugiat officia distinctio! Quisquam quibusdam inventore unde eos magni quae dicta distinctio voluptatem nisi?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ab similique velit tenetur accusantium earum sunt eaque exercitationem alias iste voluptatibus, dicta ullam quam quis doloribus nisi, nesciunt, doloremque dolorum?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ipsum dolores, nemo laudantium similique quos mollitia sunt est labore. Minima deleniti excepturi consequatur explicabo fugit sit repellendus provident corporis laboriosam!
-
-
-             <div class="msg_body_footer">
-                <div class="data">
-                    5 hours ago
-
-                </div>
-                <div class="read">
-                    <i class="bi bi-check"></i>
-
-                </div>
-
-             </div>
+         <div class="info_item">
+             <i class="bi bi-image-fill"></i>
          </div>
-
-
-         <div class="msg_body msg_body_receiver">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis temporibus dolorum asperiores corrupti numquam sint aperiam fugiat officia distinctio! Quisquam quibusdam inventore unde eos magni quae dicta distinctio voluptatem nisi?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ab similique velit tenetur accusantium earum sunt eaque exercitationem alias iste voluptatibus, dicta ullam quam quis doloribus nisi, nesciunt, doloremque dolorum?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ipsum dolores, nemo laudantium similique quos mollitia sunt est labore. Minima deleniti excepturi consequatur explicabo fugit sit repellendus provident corporis laboriosam!
-
-
-             <div class="msg_body_footer">
-                <div class="data">
-                    5 hours ago
-
-                </div>
-                <div class="read">
-                    <i class="bi bi-check"></i>
-
-                </div>
-
-             </div>
+         <div class="info_item">
+             <i class="bi bi-info-circle"></i>
          </div>
-
-
+ 
+        </div>
+ 
+     </div>
+     <div class="chatbox_body">
+ 
+        @foreach ($messages as $message)
          
+        <div class="msg_body {{$this->auth->id == $message->sender_id ? 'msg_body_me':'msg_body_receiver'}}">
+            
+             {{$message->body}}
+             <div class="msg_body_footer">
+                <div class="data">
+                   {{$message->created_at->format('m: i a')}}
 
+                </div>
+                <div class="read">
+                    <i class="bi bi-check"></i>
 
-    </div>
+                </div>
+
+             </div>
+         </div>
+            
+        @endforeach
+ 
+ 
+     </div>
+
+     @else 
+
+       <div class="fs-4 text-center text-primary mt-5">
+               no Conversationselected 
+       </div>
+    @endif
+
    
 </div>
