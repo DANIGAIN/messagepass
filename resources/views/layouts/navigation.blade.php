@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="{{route('Dashboard')}}"> Dashboard <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{{route('Dashboard')}}"> My Profile <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('chat')}}">chat</a>

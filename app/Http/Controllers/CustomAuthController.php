@@ -51,7 +51,7 @@ class CustomAuthController extends Controller
         {
             if(Hash::check($request->password , $user->password)){
                 $request->session()->put('loginId',$user->id);
-                return redirect()->route('Dashboard');
+                return redirect()->route('chat');
 
             }else{
                 return back()->with('fail','Password not match');

@@ -49,7 +49,12 @@ class SendMessage extends Component
 
 
        
+        $this->emitTo('chat.chatbox','pushMessage',$createdMessage->id);
 
+
+        //reshorsh conversation list
+        $this->emitTo('chat.chatlist','refresh');
+        $this->reset('body');
         
         //dd($this->body);
         # code...

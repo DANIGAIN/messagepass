@@ -17,8 +17,10 @@ class Chatlist extends Component
     public $receiverInstance;
     public $selectConversation;
     public $name;
+    public $user;
+    
 
-    protected $listeners =['chatUserSelect'];
+    protected $listeners =['chatUserSelect', 'refresh'=>'$refresh'];
 
 
     public function chatUserSelect(Conversation $conversation ,$receiverId)
@@ -33,11 +35,12 @@ class Chatlist extends Component
 
     public function getChatUserInstance(Conversation $conversation ,$request)
     {
-
+        $auth = array();
         if(Session::has('loginId'))
         {
                $auth = User::where('id','=',Session::get('loginId'))->first();
         }
+        $this->user = $auth;
 
         if($conversation->sender_id == $auth->id)
         {

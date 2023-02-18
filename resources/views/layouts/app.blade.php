@@ -21,7 +21,6 @@
         
         <!-- css file -->
         <link rel="stylesheet" href="css/chat.css">
-        
 
 
         <!-- Scripts -->

@@ -1,50 +1,40 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untitled</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="{{asset('css/login.css')}}">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
 </head>
-
 <body>
-<div class="login-dark">
-   <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4" style="margin-top:20px">
-                <h4>Welcome To Dashboard</h4>
-                   <table class="tabel">
-                    <thead>
-                        <th>Name </th>
-                        <th>Email </th>
-                        <th>Action </th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{$data->name}}</td>
-                            <td>{{$data->email}}</td>
-                            <td><a href="{{route('logout')}}">logout</a></td>
-                        </tr>
-                    </tbody>
-                    
-                   </table>
-                <hr>
+
+    
+    <div class="card">
+        <div class="image"><img src="https://ui-avatars.com/api/?name={{$data->name}}" alt=""></div>
+        <div class="content">
+            <h1>{{$data->name}}</h1>
+            <h3> {{$data->email}} </h3>
+            <div class="container">
+                <button type="button"> <a href="{{route('logout')}}">logout</a></button> <br>
+
+                <button type="button"> <a href="{{route('chat')}}">Chat</a></button>
+
             </div>
 
+            <div class="container">
+                <button type="button"> <a href="{{route('logout')}}">Delete</a></button> <br>
+
+                <button type="button"> <a href="{{route('chat')}}">Reset</a></button>
+
+            </div>
             
         </div>
     </div>
-</div>
+    
+    
 </body>
-
 </html>
-
-
-
-
-
-
-

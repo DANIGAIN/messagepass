@@ -31,8 +31,7 @@
      <div class="chatbox_body">
  
         @foreach ($messages as $message)
-         
-        <div class="msg_body {{$this->auth->id == $message->sender_id ? 'msg_body_me':'msg_body_receiver'}}">
+        <div wire:key='{{$message->id}}' class="msg_body {{$this->user->id == $message->sender_id? 'msg_body_me':'msg_body_receiver'}}">
             
              {{$message->body}}
              <div class="msg_body_footer">
@@ -59,6 +58,13 @@
                no Conversationselected 
        </div>
     @endif
+
+    <script>
+        window.addEventListener('rowChatToBottom',event=>
+        {
+            $('.chatbox_body').scrollTop($('.chatbox_body')[0].scrollHeight);
+        });
+    </script>
 
    
 </div>
