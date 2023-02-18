@@ -28,8 +28,8 @@ class Chatbox extends Component
         $this->selectConversation= $convarsation;
         $this->receiverInstance= $receiver;
 
-        $this->messages_count= Message::where('conversations_id', $this->selectConversation->id)->count();
-        $this->messages= Message::where('conversations_id', $this->selectConversation->id)
+        $this->messages_count= Message::where('conversation_id', $this->selectConversation->id)->count();
+        $this->messages= Message::where('conversation_id', $this->selectConversation->id)
         ->skip($this->messages_count - $this->paginateVar)
         ->take($this->paginateVar)->get();
 

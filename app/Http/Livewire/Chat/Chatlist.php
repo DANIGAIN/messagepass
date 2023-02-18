@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Chat;
 
 use Livewire\Component;
 use App\Models\Conversation;
+use App\Models\Message ;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
 
@@ -18,6 +19,7 @@ class Chatlist extends Component
     public $selectConversation;
     public $name;
     public $user;
+    public $massages;
     
 
     protected $listeners =['chatUserSelect', 'refresh'=>'$refresh'];
@@ -66,6 +68,9 @@ class Chatlist extends Component
         }
         
         $this->conversations = Conversation::where('sender_id',$auth->id)->orwhere('receiver_id',$auth->id)->orderBy('last_time_massage','DESC')->get();
+
+        $this->massages = Message::where('sender_id',$auth->id)->orwhere('receiver_id',$auth->id)->get();
+        $this->user = $auth ;
 
     }
     public function render()

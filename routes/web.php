@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Livewire\Chat\Creatchat ;
 use App\Http\Livewire\Chat\Main;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +16,7 @@ use App\Http\Livewire\Chat\Main;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
  //livewire
  Route::get('users',Creatchat::class)->name('users');

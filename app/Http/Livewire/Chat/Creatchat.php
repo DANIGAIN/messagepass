@@ -29,7 +29,7 @@ class Creatchat extends Component
         {
              $createdConversation = Conversation::create(['receiver_id' => $receiverId, 'sender_id' => $auth->id ,'last_time_massage' =>"2024-01-01 00:00:00"]);
              //Conversation has created 
-             $createdMassage = Message::create(['conversations_id'=> $createdConversation->id ,'sender_id'=> $auth->id,'receiver_id'=> $receiverId,'body'=> $this->message]);
+             $createdMassage = Message::create(['conversation_id'=> $createdConversation->id ,'sender_id'=> $auth->id,'receiver_id'=> $receiverId,'body'=> $this->message]);
              $createdConversation->last_time_massage = $createdMassage->created_at;
              $createdConversation->save();
              dd($createdMassage);

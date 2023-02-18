@@ -38,7 +38,7 @@ class SendMessage extends Component
         }
 
         $createdMessage= Message::create([
-            'conversations_id'=>$this->selectConversation->id,
+            'conversation_id'=>$this->selectConversation->id,
             'sender_id'=>$auth->id,
             'receiver_id'=>$this->receiverInstance->id,
             'body'=>$this->body,

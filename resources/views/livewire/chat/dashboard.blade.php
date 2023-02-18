@@ -24,13 +24,6 @@
                 <button type="button"> <a href="{{route('chat')}}">Chat</a></button>
 
             </div>
-
-            <div class="container">
-                <button type="button"> <a href="{{route('logout')}}">Delete</a></button> <br>
-
-                <button type="button"> <a href="{{route('chat')}}">Reset</a></button>
-
-            </div>
             
         </div>
     </div>

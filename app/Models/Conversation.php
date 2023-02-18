@@ -12,9 +12,9 @@ class Conversation extends Model
     
 
     //relation-ship
-    public function massage()
+    public function messages()
     {
-        return $this->hasmany(Massage::class);
+        return $this->hasMany(Message::class);
     }
     public function user()
     {

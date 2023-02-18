@@ -37,8 +37,7 @@ class CustomAuthController extends Controller
         }else
         {
              return back()->with('fail','something wrong');
-        }
-        
+        } 
     }
     public function loginUser(Request $request)
     {
@@ -70,8 +69,8 @@ class CustomAuthController extends Controller
          if(Session::has('loginId'))
          {
             $data = User::where('id','=',Session::get('loginId'))->first();
-            
-         }
+         } 
+        
          return view('livewire/chat/dashboard',compact('data'));
     }
     public function logOut()
