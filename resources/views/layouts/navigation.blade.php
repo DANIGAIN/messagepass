@@ -3,7 +3,7 @@
     <h2>
           <i class="bi bi-smartwatch"></i>
           <b>
-              <a class="navbar-brand" href="#"> Private Time Pass </a>
+              <a class="navbar-brand" href="#"> Time Pass </a>
           </b>
     </h2>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
