@@ -32,12 +32,14 @@ class Creatchat extends Component
              $createdMassage = Message::create(['conversation_id'=> $createdConversation->id ,'sender_id'=> $auth->id,'receiver_id'=> $receiverId,'body'=> $this->message]);
              $createdConversation->last_time_massage = $createdMassage->created_at;
              $createdConversation->save();
-             dd($createdMassage);
+             return redirect()->route('chat');
+             
        
        }
         else if(count($checkedConversation)>=0)
         {
-            dd('conversation exists');
+            return redirect()->route('chat');
+
         }
 
     }

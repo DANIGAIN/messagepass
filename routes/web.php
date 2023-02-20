@@ -19,8 +19,8 @@ use App\Http\Livewire\Chat\Main;
 
 
  //livewire
- Route::get('users',Creatchat::class)->name('users');
- Route::get('/chat{key?}',Main::class)->name('chat');
+ Route::get('users',Creatchat::class)->name('users')->middleware('isLogGetIn');
+ Route::get('/chat{key?}',Main::class)->name('chat')->middleware('isLogGetIn');
 
 
 
